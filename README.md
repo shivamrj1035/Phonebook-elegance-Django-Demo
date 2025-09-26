@@ -22,6 +22,7 @@ A complete Django web application demonstrating CRUD (Create, Read, Update, Dele
 ## 🛠️ Installation & Setup
 
 ### 1. Clone or Download the Project
+
 ```bash
 # If you have git
 git clone <repository-url>
@@ -31,6 +32,7 @@ cd phonebook_project
 ```
 
 ### 2. Create Virtual Environment
+
 ```bash
 # Create virtual environment
 python -m venv django_phonebook_env
@@ -43,27 +45,32 @@ source django_phonebook_env/bin/activate
 ```
 
 ### 3. Install Dependencies
+
 ```bash
 pip install django
 ```
 
 ### 4. Run Migrations
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
 ### 5. Create Superuser (Optional)
+
 ```bash
 python manage.py createsuperuser
 ```
 
 ### 6. Run Development Server
+
 ```bash
 python manage.py runserver
 ```
 
 ### 7. Access the Application
+
 - **Main Application**: http://127.0.0.1:8000/
 - **Admin Panel**: http://127.0.0.1:8000/admin/
 
@@ -101,10 +108,12 @@ phonebook_project/
 ## 🎯 Application Flow
 
 ### 1. Models (`phonebook/models.py`)
+
 - **Contact Model**: Defines the structure of contact data
 - Fields: first_name, last_name, phone_number, email, address, created_at, updated_at
 
 ### 2. Views (`phonebook/views.py`)
+
 - **contact_list**: Display all contacts
 - **contact_detail**: Show individual contact details
 - **contact_create**: Create new contact
@@ -112,14 +121,17 @@ phonebook_project/
 - **contact_delete**: Delete contact with confirmation
 
 ### 3. Forms (`phonebook/forms.py`)
+
 - **ContactForm**: Django ModelForm for contact creation and editing
 - Includes Bootstrap CSS classes for styling
 
 ### 4. URLs (`phonebook/urls.py`)
+
 - Maps URL patterns to corresponding views
 - RESTful URL structure
 
 ### 5. Templates
+
 - **base.html**: Common layout with navigation and Bootstrap
 - **contact_list.html**: Grid view of all contacts
 - **contact_detail.html**: Detailed view of single contact
@@ -129,16 +141,18 @@ phonebook_project/
 ## 🔧 Key Django Concepts Demonstrated
 
 ### 1. **Models & Database**
+
 ```python
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
     # ... other fields
-    
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 ```
 
 ### 2. **Views & HTTP Methods**
+
 ```python
 def contact_create(request):
     if request.method == 'POST':
@@ -148,6 +162,7 @@ def contact_create(request):
 ```
 
 ### 3. **Forms & Validation**
+
 ```python
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -156,6 +171,7 @@ class ContactForm(forms.ModelForm):
 ```
 
 ### 4. **URL Routing**
+
 ```python
 urlpatterns = [
     path('', views.contact_list, name='contact_list'),
@@ -165,10 +181,10 @@ urlpatterns = [
 ```
 
 ### 5. **Template Inheritance**
+
 ```html
-{% extends 'base.html' %}
-{% block content %}
-    <!-- Page-specific content -->
+{% extends 'base.html' %} {% block content %}
+<!-- Page-specific content -->
 {% endblock %}
 ```
 
@@ -209,6 +225,7 @@ After understanding this project, consider exploring:
 ## 🤝 Contributing
 
 This is an educational project. Feel free to:
+
 - Add new features
 - Improve the UI/UX
 - Add more validation
@@ -216,14 +233,7 @@ This is an educational project. Feel free to:
 
 ## 📝 License
 
-This project is created for educational purposes and is free to use and modify.
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-1. Check the Django documentation: https://docs.djangoproject.com/
-2. Review the code comments and structure
-3. Experiment with modifications to understand the flow
+This project is created for educational purposes by Shivam Jayswal and is free to use and modify.
 
 ---
 
